@@ -1,6 +1,7 @@
 import { styled } from '@/styles'
 
 const spaceDark50 = '$colors$spaceDark50'
+const spaceDark200 = '$colors$spaceDark200'
 
 export const Button = styled('button', {
   display: 'inline-flex',
@@ -20,7 +21,7 @@ export const Button = styled('button', {
   fontSize: '$base',
   fontWeight: '$semibold',
 
-  $$primaryBg: '$colors$spaceDark200',
+  $$primaryBg: spaceDark200,
   $$primaryBgHover: '$colors$spaceDark300',
   $$primaryBgActive: '$colors$spaceDark400',
   $$textColor: '$colors$spaceDark1000',
@@ -35,6 +36,13 @@ export const Button = styled('button', {
   '&:active': {
     transition: 'all 0.15s ease',
     background: '$$primaryBgActive',
+  },
+  '&:disabled': {
+    cursor: 'not-allowed',
+    $$primaryBg: spaceDark200,
+    $$primaryBgHover: spaceDark200,
+    $$primaryBgActive: spaceDark200,
+    $$textColor: '$colors$spaceDark400',
   },
   '&[data-error]': {
     $$primaryBg: '$colors$errorRed300',
