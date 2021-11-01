@@ -7,16 +7,16 @@ const { styled, css, theme, getCssText, globalCss } = createStitches({
   prefix: 'kiu',
   theme: { ...tokens },
   utils: {
-    px: () => (value: Stitches.ScaleValue<'space'>) => ({
+    px: (value: Stitches.ScaleValue<'space'>) => ({
       paddingInline: value,
     }),
-    py: () => (value: Stitches.ScaleValue<'space'>) => ({
+    py: (value: Stitches.ScaleValue<'space'>) => ({
       paddingBlock: value,
     }),
-    mx: () => (value: Stitches.ScaleValue<'space'>) => ({
+    mx: (value: Stitches.ScaleValue<'space'>) => ({
       marginInline: value,
     }),
-    my: () => (value: Stitches.ScaleValue<'space'>) => ({
+    my: (value: Stitches.ScaleValue<'space'>) => ({
       marginBlock: value,
     }),
   },
