@@ -70,6 +70,7 @@ module.exports = {
         'unicorn/filename-case': 'off',
         'simple-import-sort/imports': 'error',
         'import/extensions': 'off',
+        'react/button-has-type': 'off',
       },
     },
   ],
