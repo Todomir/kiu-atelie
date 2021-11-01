@@ -98,5 +98,6 @@ export const Button = styled('button', {
 
   defaultVariants: {
     color: 'melrose',
+    size: 'contain',
   },
 })
