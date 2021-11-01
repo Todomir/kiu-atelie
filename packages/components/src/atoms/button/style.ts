@@ -44,6 +44,9 @@ export const Button = styled('button', {
     $$primaryBgActive: spaceDark200,
     $$textColor: '$colors$spaceDark400',
   },
+  '&[data-icon-button]': {
+    padding: '$2',
+  },
   '&[data-error]': {
     $$primaryBg: '$colors$errorRed300',
     $$primaryBgHover: '$colors$errorRed400',
@@ -84,6 +87,12 @@ export const Button = styled('button', {
         $$primaryBgHover: '$colors$spaceDark800',
         $$primaryBgActive: '$colors$spaceDark900',
         $$textColor: '$colors$spaceDark50',
+      },
+      ghost: {
+        $$primaryBg: 'transparent',
+        $$primaryBgHover: '$colors$spaceDark100',
+        $$primaryBgActive: '$colors$spaceDark200',
+        $$textColor: '$colors$spaceDark1000',
       },
     },
     size: {
