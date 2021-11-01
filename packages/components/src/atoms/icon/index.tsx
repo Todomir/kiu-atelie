@@ -13,6 +13,7 @@ export function Icon({ name, size = 24 }: Props) {
   const Path = icons[name as keyof typeof icons]
   return (
     <Svg
+      className="icon"
       css={{ width: `${size}px`, height: `${size}px` }}
       viewBox="0 0 24 24"
       fill="none"
@@ -22,3 +23,5 @@ export function Icon({ name, size = 24 }: Props) {
     </Svg>
   )
 }
+
+Icon.toString = () => '.icon'
