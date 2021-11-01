@@ -19,6 +19,10 @@ export function Password({ label, icon, name, ...props }: Props) {
         {icon}
         <S.Input name={name} {...props} type={show ? 'text' : 'password'} />
         <IconButton
+          aria-label="Alternar visibilidade da senha"
+          role="switch"
+          aria-checked={show}
+          aria-describedby={name}
           onClick={toggle}
           color="ghost"
           icon={<Icon name={show ? 'eye-slashed' : 'eye'} />}

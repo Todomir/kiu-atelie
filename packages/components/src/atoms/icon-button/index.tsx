@@ -5,6 +5,7 @@ import * as S from '@/atoms/button/style'
 type Props = {
   icon?: React.ReactNode
   css?: Stitches.CSS
+  'aria-label': string
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &
   Stitches.VariantProps<typeof S.Button>
 
