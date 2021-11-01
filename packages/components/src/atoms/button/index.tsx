@@ -1,11 +1,10 @@
 import type * as Stitches from '@stitches/react'
 
-import { Icon } from '..'
 import * as S from './style'
 
 type Props = {
-  leftIcon?: React.ReactElement<typeof Icon>
-  rightIcon?: React.ReactElement<typeof Icon>
+  leftIcon?: React.ReactNode
+  rightIcon?: React.ReactNode
   css?: Stitches.CSS
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &
   Stitches.VariantProps<typeof S.Button>
