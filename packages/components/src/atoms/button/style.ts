@@ -86,6 +86,14 @@ export const Button = styled('button', {
         $$textColor: '$colors$spaceDark50',
       },
     },
+    size: {
+      full: {
+        width: '100%',
+      },
+      contain: {
+        width: 'fit-content',
+      },
+    },
   },
 
   defaultVariants: {
