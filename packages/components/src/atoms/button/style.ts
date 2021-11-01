@@ -30,6 +30,7 @@ export const Button = styled('button', {
   transition: 'all 0.3s ease',
   '&:hover': {
     background: '$$primaryBgHover',
+    gap: '$2',
   },
   '&:active': {
     transition: 'all 0.15s ease',
