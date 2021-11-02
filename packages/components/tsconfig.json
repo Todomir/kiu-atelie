@@ -3,6 +3,7 @@
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"],
+      "@emotion/core": ["./types/emotion.d.ts"],
     },
     "target": "ESNext",
     "useDefineForClassFields": true,
