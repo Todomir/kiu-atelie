@@ -9,7 +9,7 @@ type Props = {
 
 const Svg = styled('svg')
 
-export function Icon({ name, size = 24 }: Props) {
+export function Icon({ name, size = 20 }: Props) {
   const Path = icons[name as keyof typeof icons]
   return (
     <Svg
