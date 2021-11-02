@@ -2,6 +2,7 @@ import { styled } from '@/styles'
 
 const Heading = styled('h1', {
   fontWeight: '$bold',
+  fontFamily: '$sans',
   lineHeight: '$normal',
 
   variants: {
