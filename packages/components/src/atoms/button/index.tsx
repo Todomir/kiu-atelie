@@ -2,22 +2,21 @@ import type * as Stitches from '@stitches/react'
 
 import * as S from './style'
 
-type Props = {
-  leftIcon?: React.ReactNode
-  rightIcon?: React.ReactNode
-  css?: Stitches.CSS
-} & React.ButtonHTMLAttributes<HTMLButtonElement> &
-  Stitches.VariantProps<typeof S.Button>
+export type Props = React.ButtonHTMLAttributes<HTMLButtonElement> &
+  Stitches.VariantProps<typeof S.Button> & {
+    leftIcon?: React.ReactNode
+    rightIcon?: React.ReactNode
+  }
 
 export function Button({
   leftIcon,
   rightIcon,
   type,
   children,
-  ...props
+  ...rest
 }: WithChildren<Props>) {
   return (
-    <S.Button type={type} {...props}>
+    <S.Button type={type} {...rest}>
       {leftIcon}
       {children}
       {rightIcon}
