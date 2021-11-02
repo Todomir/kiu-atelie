@@ -6,6 +6,7 @@ export type Props = React.ButtonHTMLAttributes<HTMLButtonElement> &
   Stitches.VariantProps<typeof S.Button> & {
     leftIcon?: React.ReactNode
     rightIcon?: React.ReactNode
+    css?: Stitches.CSS
   }
 
 export function Button({
