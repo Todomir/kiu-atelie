@@ -62,6 +62,7 @@ export const Input = styled('input', {
 export const Label = styled('label', {
   fontSize: '$base',
   fontWeight: '$semibold',
+  fontFamily: '$sans',
   color: '$spaceDark900',
   marginBottom: '$4',
 })
