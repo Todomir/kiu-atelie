@@ -2,7 +2,7 @@ import React from 'react'
 
 import * as S from './shared/style'
 
-type Props = {
+export type Props = {
   label: string
   icon?: React.ReactNode
 } & React.InputHTMLAttributes<HTMLInputElement>
