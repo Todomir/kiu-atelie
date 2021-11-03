@@ -1,3 +1,4 @@
+const react = require('@vitejs/plugin-react')
 const path = require('path')
 
 module.exports = {
@@ -10,10 +11,16 @@ module.exports = {
   async viteFinal(config, { configType }) {
     if (configType === 'DEVELOPMENT') {
       config.optimizeDeps.include = [
-        ...config?.optimizeDeps?.include,
         'synchronous-promise',
+        'react-is',
+        '@base2/pretty-print-object',
+        ...config?.optimizeDeps?.include,
       ]
     }
+    config.plugins = [
+      ...config.plugins,
+      require('vite-plugin-eslint').default(),
+    ]
     config.resolve = {
       alias: [{ find: '@', replacement: path.resolve(__dirname, '../src') }],
     }
