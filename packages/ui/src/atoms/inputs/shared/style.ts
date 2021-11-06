@@ -23,6 +23,7 @@ export const InputWrapper = styled('div', {
 
   [`& ${Icon}`]: {
     color: 'inherit',
+    flexShrink: 0,
   },
 
   [`& ${IconButton}`]: {
@@ -46,7 +47,9 @@ export const Input = styled('input', {
   fontWeight: '$semibold',
   background: 'transparent',
 
-  flex: 1,
+  width: '100%',
+  flexGrow: 1,
+  flexShrink: 9999,
 
   '&:focus': {
     outline: 'none',
