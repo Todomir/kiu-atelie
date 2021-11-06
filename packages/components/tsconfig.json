@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "baseUrl": "src",
+    "rootDir": "src",
+    "outDir": "dist",
+    "plugins": [{ "transform": "@zerollup/ts-transform-paths" }],
     "paths": {
       "@/*": ["*"],
       "@emotion/core": ["./types/emotion.d.ts"],
@@ -10,17 +13,18 @@
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
     "skipLibCheck": false,
-    "esModuleInterop": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "module": "es2015",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "emitDeclarationOnly": true,
+    "declaration": true,
     "jsx": "react-jsx"
   },
   "include": ["./src"],
-  "exclude": ["./node_modules"]
+  "exclude": ["./node_modules", "dist"]
 }
