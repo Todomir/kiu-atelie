@@ -1,6 +1,7 @@
+/* eslint-disable react/no-danger */
 
-import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
-import { getCssText } from '@kiuatelie/ui';
+import { getCssText } from '@kiuatelie/ui'
+import NextDocument, { Head, Html, Main, NextScript } from 'next/document'
 
 export default class Document extends NextDocument {
   render() {
