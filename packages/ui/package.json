@@ -16,8 +16,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "postbuild": "tsc --declaration --emitDeclarationOnly --outDir ./dist/types",
+    "build": "vite build && tsc --declaration --emitDeclarationOnly --outDir ./dist/types",
+    "build:watch": "vite build --watch && tsc --declaration --emitDeclarationOnly --outDir ./dist/types",
     "serve": "vite preview",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook"
