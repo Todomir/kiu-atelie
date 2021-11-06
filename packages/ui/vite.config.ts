@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, './src/index.tsx'),
-      name: '@kiuatelie/components',
+      name: '@kiuatelie/ui',
       fileName: format => `index.${format}.js`,
     },
     rollupOptions: {
