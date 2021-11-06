@@ -25,6 +25,7 @@ export function Password({ label, icon, name, ...props }: Props) {
           aria-describedby={name}
           onClick={toggle}
           color="ghost"
+          type="button"
           icon={<Icon name={show ? 'eye-slashed' : 'eye'} />}
         />
       </S.InputWrapper>
