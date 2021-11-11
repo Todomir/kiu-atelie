@@ -1,8 +1,11 @@
+import type { CSS } from '@stitches/react'
+
 import * as S from './style'
 
 export type Props = {
   href: string
   underline?: boolean
+  css?: CSS
 }
 
 export function Link({
