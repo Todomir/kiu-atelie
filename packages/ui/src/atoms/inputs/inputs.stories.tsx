@@ -34,3 +34,11 @@ DefaultWithHelperText.args = {
   placeholder: 'Input with helper text',
   helperText: 'Lorem ipsum dolor sit amet',
 }
+
+export const DefaultWithError = Template.bind({})
+
+DefaultWithError.args = {
+  label: 'Input with error',
+  placeholder: 'Input with error',
+  error: 'Lorem ipsum dolor sit amet',
+}
