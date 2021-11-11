@@ -26,3 +26,11 @@ DefaultWithIcon.args = {
   placeholder: 'Input with icon',
   icon: <Icon name="lock" />,
 }
+
+export const DefaultWithHelperText = Template.bind({})
+
+DefaultWithHelperText.args = {
+  label: 'Input with helper text',
+  placeholder: 'Input with helper text',
+  helperText: 'Lorem ipsum dolor sit amet',
+}
