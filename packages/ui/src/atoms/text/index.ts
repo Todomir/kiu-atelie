@@ -3,6 +3,7 @@ import { styled } from '@/styles'
 const Text = styled('p', {
   fontWeight: '$regular',
   lineHeight: '$normal',
+  fontFamily: '$sans',
 
   variants: {
     size: {
