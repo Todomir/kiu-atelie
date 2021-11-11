@@ -17,7 +17,12 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
       <S.Label htmlFor={name}>{label}</S.Label>
       <S.InputWrapper>
         {icon}
-        <S.Input aria-invalid={!!error} ref={ref} name={name} {...props} />
+        <S.Input
+          aria-invalid={error ? true : undefined}
+          ref={ref}
+          name={name}
+          {...props}
+        />
       </S.InputWrapper>
       {error && (
         <Text

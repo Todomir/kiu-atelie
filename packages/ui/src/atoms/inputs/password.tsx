@@ -21,7 +21,7 @@ export const Password = React.forwardRef<HTMLInputElement, Props>(
         <S.InputWrapper>
           {icon}
           <S.Input
-            aria-invalid={!!error}
+            aria-invalid={error ? true : undefined}
             ref={ref}
             name={name}
             {...props}
