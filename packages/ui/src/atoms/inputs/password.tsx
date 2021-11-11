@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Icon, IconButton } from '@/atoms'
+import { Icon, IconButton, Text } from '@/atoms'
 import { useToggle } from '@/utils/hooks'
 
 import * as S from './shared/style'
@@ -8,9 +8,10 @@ import * as S from './shared/style'
 export type Props = {
   label: string
   icon?: React.ReactNode
+  helperText?: string
 } & React.InputHTMLAttributes<HTMLInputElement>
 
-export function Password({ label, icon, name, ...props }: Props) {
+export function Password({ label, icon, name, helperText, ...props }: Props) {
   const [show, toggle] = useToggle()
   return (
     <S.Wrapper>
@@ -28,7 +29,17 @@ export function Password({ label, icon, name, ...props }: Props) {
           type="button"
           icon={<Icon name={show ? 'eye-slashed' : 'eye'} />}
         />
-      </S.InputWrapper>
+      </S.InputWrapper>{' '}
+      {helperText && (
+        <Text
+          size="sm"
+          css={{
+            color: '$spaceDark400',
+          }}
+        >
+          {helperText}
+        </Text>
+      )}
     </S.Wrapper>
   )
 }
