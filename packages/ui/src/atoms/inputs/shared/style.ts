@@ -1,10 +1,12 @@
 import { Icon, IconButton } from '@/atoms'
 import { styled } from '@/styles'
 
-export const Wrapper = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  position: 'relative',
+export const Label = styled('label', {
+  fontSize: '$base',
+  fontWeight: '$semibold',
+  fontFamily: '$sans',
+  color: '$spaceDark900',
+  marginBottom: '$4',
 })
 
 export const InputWrapper = styled('div', {
@@ -61,11 +63,25 @@ export const Input = styled('input', {
     fontWeight: '$regular',
     color: '$spaceDark400',
   },
+
+  '&[aria-invalid]': {
+    '&::placeholder': {
+      color: '$colors$errorRed400',
+    },
+  },
 })
-export const Label = styled('label', {
-  fontSize: '$base',
-  fontWeight: '$semibold',
-  fontFamily: '$sans',
-  color: '$spaceDark900',
-  marginBottom: '$4',
+
+export const Wrapper = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  position: 'relative',
+
+  '&[data-invalid]': {
+    [`& ${Label}`]: {
+      color: '$errorRed400',
+    },
+    [`& ${InputWrapper}`]: {
+      outline: '2px solid $errorRed400',
+    },
+  },
 })
