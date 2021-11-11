@@ -40,6 +40,7 @@ export const Input = React.forwardRef<HTMLInputElement, Props>(
         <Text
           size="sm"
           css={{
+            marginTop: '$2',
             color: '$spaceDark400',
           }}
         >

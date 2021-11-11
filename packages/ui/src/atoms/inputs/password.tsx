@@ -55,6 +55,7 @@ export const Password = React.forwardRef<HTMLInputElement, Props>(
           <Text
             size="sm"
             css={{
+              marginTop: '$2',
               color: '$spaceDark400',
             }}
           >
