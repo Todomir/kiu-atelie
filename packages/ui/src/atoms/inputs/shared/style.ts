@@ -6,7 +6,7 @@ export const Label = styled('label', {
   fontWeight: '$semibold',
   fontFamily: '$sans',
   color: '$spaceDark900',
-  marginBottom: '$4',
+  marginBottom: '$8',
 })
 
 export const InputWrapper = styled('div', {
@@ -15,11 +15,10 @@ export const InputWrapper = styled('div', {
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
-  gap: '$3',
+  gap: '$10',
 
   background: '$spaceDark50',
-  px: '$4',
-  py: '$4',
+  padding: '$16',
 
   borderRadius: '$lg',
 
@@ -31,7 +30,7 @@ export const InputWrapper = styled('div', {
   [`& ${IconButton}`]: {
     position: 'absolute',
     top: '50%',
-    transform: 'translate(-$space$4, -50%)',
+    transform: 'translate(-$space$16, -50%)',
     right: 0,
   },
 

@@ -7,10 +7,7 @@ export const Button = styled('button', {
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
-  gap: '$1',
-
-  px: '$6',
-  py: '$3',
+  gap: '$8',
 
   borderRadius: '$xl',
   border: 'none',
@@ -18,7 +15,6 @@ export const Button = styled('button', {
   cursor: 'pointer',
 
   fontFamily: '$sans',
-  fontSize: '$base',
   fontWeight: '$semibold',
 
   $$primaryBg: spaceDark200,
@@ -45,7 +41,7 @@ export const Button = styled('button', {
     $$textColor: '$colors$spaceDark400',
   },
   '&[data-icon-button]': {
-    padding: '$2',
+    padding: '$8',
   },
   '&[data-error]': {
     $$primaryBg: '$colors$errorRed300',
@@ -96,17 +92,27 @@ export const Button = styled('button', {
       },
     },
     size: {
-      full: {
-        width: '100%',
+      regular: {
+        px: '$24',
+        py: '$12',
+        fontSize: '$base',
       },
-      contain: {
-        width: 'fit-content',
+      small: {
+        px: '$16',
+        py: '$8',
+        fontSize: '$sm',
+      },
+    },
+    full: {
+      true: {
+        width: '100%',
       },
     },
   },
 
   defaultVariants: {
     color: 'melrose',
-    size: 'contain',
+    size: 'regular',
+    full: false,
   },
 })

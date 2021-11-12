@@ -5,6 +5,7 @@ export const Anchor = styled('a', {
   position: 'relative',
   alignItems: 'center',
   justifyContent: 'center',
+  gap: '$8',
 
   fontFamily: '$sans',
   fontSize: '$regular',

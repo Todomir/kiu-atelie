@@ -36,8 +36,8 @@ export const Content = styled(Tooltip.Content, {
   fontSize: '$base',
   color: '$spaceDark1000',
 
-  px: '$3',
-  py: '$1half',
+  px: '$10',
+  py: '$6',
 
   boxShadow:
     '5.36111px 4.50095px 22px rgba(0, 0, 0, 0.1), 2.71406px 2.27861px 9.59062px rgba(0, 0, 0, 0.0675), 1.07222px 0.90019px 3.575px rgba(0, 0, 0, 0.05), 0.234548px 0.196917px 1.27188px rgba(0, 0, 0, 0.0325)',
