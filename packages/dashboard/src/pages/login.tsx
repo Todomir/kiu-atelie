@@ -8,7 +8,7 @@ const Login: NextPage = () => (
     <S.Section
       css={{
         '@media screen and (max-width: 420px)': {
-          px: '$6',
+          px: '$24',
         },
       }}
     >
@@ -24,12 +24,12 @@ const Login: NextPage = () => (
           label="Email"
           placeholder="email@email.com"
         />
-        <Password label="Senha" placeholder="Sua senha" />
-        <Button
-          type="submit"
-          size="full"
-          rightIcon={<Icon name="chevron-right" />}
-        >
+        <Password
+          label="Senha"
+          placeholder="Sua senha"
+          helperText="É segredo. Não contaremos para ninguém."
+        />
+        <Button type="submit" full rightIcon={<Icon name="chevron-right" />}>
           Fazer login
         </Button>
       </S.Form>
