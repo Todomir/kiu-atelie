@@ -1,9 +1,12 @@
-import { Button, Heading, Input } from '@kiuatelie/ui'
+import { Button, Heading, Icon, Input, Link } from '@kiuatelie/ui'
 import { useMachine } from '@xstate/react'
 import { NextPage } from 'next'
+import NextLink from 'next/link'
 import { useForm } from 'react-hook-form'
 
 import profitCalculatorMachine from '@/machines/profit-calculator.machine'
+import * as S from '@/styles/dashboard/create-products.styles'
+import { Form } from '@/styles/shared'
 
 type CreateProductsFormData = {
   productCode: string
@@ -36,9 +39,17 @@ const CreateProducts: NextPage = () => {
   }
 
   return (
-    <main>
-      <Heading size="3xl">Adicionar novo produto</Heading>
-      <form onSubmit={handleSubmit(onSubmit)}>
+    <S.Container>
+      <NextLink href="https://example.com" passHref>
+        <Link css={{ color: '$spaceDark1000' }} href="##">
+          <Icon size={24} name="chevron-left" />
+          Voltar à página anterior
+        </Link>
+      </NextLink>
+      <Heading size="3xl" css={{ marginBlockEnd: '$20' }}>
+        Adicionar novo produto
+      </Heading>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <Input
           {...register('productCode', {
             required: 'O campo código não pode estar vazio.',
@@ -112,9 +123,11 @@ const CreateProducts: NextPage = () => {
           helperText="Qual porcentagem de lucro deseja ter nesse produto?"
           error={errors?.profit?.message}
         />
-        <Button type="submit">Cadastrar produtos</Button>
-      </form>
-    </main>
+        <Button rightIcon={<Icon name="chevron-right" />} type="submit">
+          Cadastrar produtos
+        </Button>
+      </Form>
+    </S.Container>
   )
 }
 
