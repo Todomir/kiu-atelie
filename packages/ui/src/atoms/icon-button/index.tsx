@@ -15,6 +15,7 @@ const Wrapper = ({
   tooltip,
   children,
 }: WithChildren<{ tooltip?: React.ReactNode }>) => {
+  // eslint-disable-next-line react/jsx-no-useless-fragment
   if (!tooltip) return <>{children}</>
   return <Tooltip tooltip={tooltip}>{children}</Tooltip>
 }
