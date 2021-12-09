@@ -72,6 +72,10 @@ module.exports = {
         'simple-import-sort/imports': 'error',
         'import/extensions': 'off',
         'react/button-has-type': 'off',
+        'react/function-component-definition': [
+          2,
+          { namedComponents: 'arrow-function' },
+        ],
       },
     },
   ],
