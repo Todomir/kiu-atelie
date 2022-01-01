@@ -1,8 +1,9 @@
 module.exports = {
-  root: true,
-  extends: ['todomir-react'],
-  parserOptions: {
-    project: 'tsconfig.json',
-    tsconfigRootDir: __dirname,
-  },
+	root: true,
+	extends: ['todomir-react'],
+	ignorePatterns: '**/*.js',
+	parserOptions: {
+		project: 'tsconfig.json',
+		tsconfigRootDir: __dirname,
+	},
 }

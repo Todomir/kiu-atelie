@@ -1,30 +1,36 @@
 {
   "compilerOptions": {
-    "baseUrl": "src",
+    "module": "esnext",
+    "target": "es5",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "sourceMap": true,
+    "jsx": "react",
+    "moduleResolution": "node",
     "rootDir": "src",
-    "outDir": "dist",
-    "plugins": [{ "transform": "@zerollup/ts-transform-paths" }],
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "baseUrl": "src/",
     "paths": {
       "@/*": ["*"],
-      "@emotion/core": ["./types/emotion.d.ts"],
-    },
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
-    "skipLibCheck": false,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "es2015",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "emitDeclarationOnly": true,
-    "declaration": true,
-    "jsx": "react-jsx"
+      "@emotion/core": ["./emotion.d.ts"]
+    }
   },
-  "include": ["./src"],
-  "exclude": ["./node_modules", "dist"]
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "src/scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest"
+  ],
+  "types": [
+    "typePatches"
+  ]
 }
