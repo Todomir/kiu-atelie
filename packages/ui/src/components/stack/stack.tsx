@@ -5,7 +5,7 @@ import type { StackProps } from "./stack.types";
 
 export const Stack = ({
   children,
-  gap,
+  gap = "$8",
   css,
   direction,
 }: WithChildren<StackProps>) => (
