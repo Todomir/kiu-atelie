@@ -14,6 +14,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           aria-invalid={error ? true : undefined}
           ref={ref}
           name={name}
+          id={name}
           {...props}
         />
       </S.InputWrapper>
