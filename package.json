@@ -27,6 +27,12 @@
           ".next/**"
         ]
       },
+      "test": {
+        "dependsOn": ["^build"],
+        "outputs": [
+          "coverage/**"
+        ]
+      },
       "lint": {
         "outputs": []
       },
