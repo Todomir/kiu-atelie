@@ -1,4 +1,5 @@
 /* eslint-disable security/detect-non-literal-fs-filename */
+import alias from '@rollup/plugin-alias'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
@@ -25,6 +26,13 @@ export default {
 			tsconfig: './tsconfig.build.json',
 			declaration: true,
 			declarationDir: 'dist',
+		}),
+		alias({
+			entries: [
+				{ find: '@/components', replacement: './src/components' },
+				{ find: '@/hooks', replacement: './src/hooks' },
+				{ find: '@/styles', replacement: './src/styles' },
+			],
 		}),
 		terser(),
 		visualizer({
