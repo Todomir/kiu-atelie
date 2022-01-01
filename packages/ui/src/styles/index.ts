@@ -114,7 +114,7 @@ const tokens = {
   },
 };
 
-const { styled, css, theme, getCssText, globalCss } = createStitches({
+const { styled, css, theme, getCssText, globalCss, config } = createStitches({
   prefix: "kiu",
   theme: { ...tokens },
   utils: {
@@ -154,4 +154,4 @@ const globalStyles = globalCss({
   },
 });
 
-export { styled, css, getCssText, theme, globalStyles };
+export { styled, css, getCssText, theme, globalStyles, config };
