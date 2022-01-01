@@ -119,16 +119,20 @@ const { styled, css, theme, getCssText, globalCss } = createStitches({
   theme: { ...tokens },
   utils: {
     px: (value: Stitches.ScaleValue<"space">) => ({
-      paddingInline: value,
+      paddingLeft: value,
+      paddingRight: value,
     }),
     py: (value: Stitches.ScaleValue<"space">) => ({
-      paddingBlock: value,
+      paddingTop: value,
+      paddingBottom: value,
     }),
     mx: (value: Stitches.ScaleValue<"space">) => ({
-      marginInline: value,
+      marginLeft: value,
+      marginRight: value,
     }),
     my: (value: Stitches.ScaleValue<"space">) => ({
-      marginBlock: value,
+      marginTop: value,
+      marginBottom: value,
     }),
   },
 });
