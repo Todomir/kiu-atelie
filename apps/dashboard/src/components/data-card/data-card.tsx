@@ -1,13 +1,9 @@
 import { Heading } from '@kiuatelie/ui'
 
-import * as S from './styles'
+import type { DataCardProps } from '.'
+import * as S from './data-card.styles'
 
-export type Props = {
-  title: string
-  data: string
-}
-
-const DataCard = ({ title, data }: Props) => (
+export const DataCard = ({ title, data }: DataCardProps) => (
   <S.Card>
     <Heading size="md">{title}</Heading>
     <Heading as="h2" size="2xl">
@@ -15,5 +11,3 @@ const DataCard = ({ title, data }: Props) => (
     </Heading>
   </S.Card>
 )
-
-export default DataCard
