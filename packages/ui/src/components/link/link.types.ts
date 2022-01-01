@@ -1,7 +1,9 @@
-import type { CSS } from "@stitches/react";
+import type * as Stitches from "@stitches/react";
+
+import { config } from "@/styles";
 
 export type LinkProps = {
   href: string;
   underline?: boolean;
-  css?: CSS;
+  css?: Stitches.CSS<typeof config>;
 };
