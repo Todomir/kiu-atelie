@@ -11,6 +11,8 @@ export const Icon = ({ name, size = 20 }: IconProps) => {
   const Path = icons[name as keyof typeof icons];
   return (
     <Svg
+      role="img"
+      aria-hidden
       className="icon"
       css={{ width: `${size}px`, height: `${size}px` }}
       viewBox="0 0 24 24"
