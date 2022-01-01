@@ -7,3 +7,4 @@ export { Link } from "./link";
 export { Password } from "./forms/password";
 export { Text } from "./text";
 export { Tooltip } from "./tooltip";
+export { Stack } from "./stack";
