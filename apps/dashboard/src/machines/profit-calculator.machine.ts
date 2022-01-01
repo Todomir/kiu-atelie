@@ -1,17 +1,14 @@
 import { assign, createMachine } from 'xstate'
 
-type ActionType =
-  | { type: 'EDIT_BUY_PRICE'; value: number }
-  | { type: 'EDIT_SELL_PRICE'; value: number }
-  | { type: 'EDIT_PROFIT'; value: number }
+import type {
+  ProfitCalculatorActionType,
+  ProfitCalculatorContext,
+} from './profit-calculator.types'
 
-type Context = {
-  buyPrice: number
-  sellPrice: number
-  profit: number
-}
-
-const profitCalculatorMachine = createMachine<Context, ActionType>(
+const profitCalculatorMachine = createMachine<
+  ProfitCalculatorContext,
+  ProfitCalculatorActionType
+>(
   {
     id: 'profit',
     initial: 'buy',
