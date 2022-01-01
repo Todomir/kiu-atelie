@@ -2,9 +2,7 @@ import { render, screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import React from "react";
 
-import { Icon } from "@/components";
-
-import { Password } from "../password";
+import { Icon, Password } from "@/components";
 
 describe("<Password />", () => {
   test("should render", () => {

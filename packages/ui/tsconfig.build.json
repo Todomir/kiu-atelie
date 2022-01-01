@@ -8,6 +8,8 @@
     "acceptance-tests",
     "webpack",
     "jest",
+    "coverage",
+    "src/__tests__/**",
     "src/stories/**",
   ]
 }

@@ -2,9 +2,7 @@ import { render, screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import React from "react";
 
-import { Icon } from "@/components";
-
-import { Input } from "../input";
+import { Icon, Input } from "@/components";
 
 describe("<Input />", () => {
   test("should render", () => {
