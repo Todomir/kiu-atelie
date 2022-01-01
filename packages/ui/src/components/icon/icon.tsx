@@ -13,6 +13,7 @@ export const Icon = ({ name, size = 20 }: IconProps) => {
     <Svg
       role="img"
       className="icon"
+      data-icon={name}
       css={{ width: `${size}px`, height: `${size}px` }}
       viewBox="0 0 24 24"
       fill="none"
