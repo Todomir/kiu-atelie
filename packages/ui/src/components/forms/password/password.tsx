@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react'
 
-import { useToggle } from "@/hooks";
+import { useToggle } from '@/hooks'
 
-import { Icon } from "../../icon";
-import { IconButton } from "../../icon-button";
-import { Text } from "../../text";
-import * as S from "../shared/style";
-import { PasswordProps } from "./password.types";
+import { Icon } from '../../icon'
+import { IconButton } from '../../icon-button'
+import { Text } from '../../text'
+import * as S from '../shared/style'
+import { PasswordProps } from './password.types'
 
 export const Password = React.forwardRef<HTMLInputElement, PasswordProps>(
   ({ label, icon, name, helperText, error, ...props }, ref) => {
-    const [show, toggle] = useToggle();
+    const [show, toggle] = useToggle()
     return (
       <S.Wrapper
         data-testid={`${name}-wrapper`}
@@ -26,7 +26,7 @@ export const Password = React.forwardRef<HTMLInputElement, PasswordProps>(
             ref={ref}
             name={name}
             {...props}
-            type={show ? "text" : "password"}
+            type={show ? 'text' : 'password'}
           />
           <IconButton
             aria-label="Alternar visibilidade da senha"
@@ -36,7 +36,7 @@ export const Password = React.forwardRef<HTMLInputElement, PasswordProps>(
             onClick={toggle}
             color="ghost"
             type="button"
-            icon={<Icon name={show ? "eye-slashed" : "eye"} />}
+            icon={<Icon name={show ? 'eye-slashed' : 'eye'} />}
           />
         </S.InputWrapper>
         {error && (
@@ -46,8 +46,8 @@ export const Password = React.forwardRef<HTMLInputElement, PasswordProps>(
             id={`${name}-error`}
             role="alert"
             css={{
-              marginTop: "$2",
-              color: "$errorRed400",
+              marginTop: '$2',
+              color: '$errorRed400',
             }}
           >
             {error}
@@ -61,14 +61,14 @@ export const Password = React.forwardRef<HTMLInputElement, PasswordProps>(
             data-testid={`${name}-helper`}
             tabIndex={-1}
             css={{
-              marginTop: "$2",
-              color: "$spaceDark400",
+              marginTop: '$2',
+              color: '$spaceDark400',
             }}
           >
             {helperText}
           </Text>
         )}
       </S.Wrapper>
-    );
+    )
   }
-);
+)

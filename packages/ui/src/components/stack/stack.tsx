@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
-import * as S from "./stack.styles";
-import type { StackProps } from "./stack.types";
+import * as S from './stack.styles'
+import type { StackProps } from './stack.types'
 
 export const Stack = ({
   children,
-  gap = "$8",
+  gap = '$8',
   css,
   direction,
 }: WithChildren<StackProps>) => (
@@ -18,4 +18,4 @@ export const Stack = ({
   >
     {children}
   </S.Stack>
-);
+)

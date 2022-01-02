@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
-import * as S from "./link.styles";
-import { LinkProps } from "./link.types";
+import * as S from './link.styles'
+import { LinkProps } from './link.types'
 
 export const Link = ({
   children,
@@ -11,4 +11,4 @@ export const Link = ({
   <S.Anchor data-underline={underline ? true : undefined} {...props}>
     {children}
   </S.Anchor>
-);
+)

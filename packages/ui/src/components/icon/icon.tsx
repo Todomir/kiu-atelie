@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react'
 
-import { styled } from "@/styles";
+import { styled } from '@/styles'
 
-import { IconProps } from "./icon.types";
-import icons from "./names";
+import { IconProps } from './icon.types'
+import icons from './names'
 
-const Svg = styled("svg");
+const Svg = styled('svg')
 
 export const Icon = ({ name, size = 20 }: IconProps) => {
-  const Path = icons[name as keyof typeof icons];
+  const Path = icons[name]
   return (
     <Svg
       role="img"
@@ -21,7 +21,7 @@ export const Icon = ({ name, size = 20 }: IconProps) => {
     >
       <Path />
     </Svg>
-  );
-};
+  )
+}
 
-Icon.toString = () => ".icon";
+Icon.toString = () => '.icon'

@@ -1,54 +1,54 @@
-import { Meta, Story } from "@storybook/react";
-import React from "react";
+import { Meta, Story } from '@storybook/react'
+import React from 'react'
 
-import { Icon, IconButton } from "@/components";
-import type { IconButtonProps } from "@/components/icon-button";
+import { Icon, IconButton } from '@/components'
+import type { IconButtonProps } from '@/components/icon-button'
 
 const meta: Meta = {
-  title: "Atoms/IconButton",
+  title: 'Atoms/IconButton',
   component: IconButton,
   args: {
     icon: <Icon name="menu-horizontal" />,
-    "aria-label": "Abrir menu de contexto",
+    'aria-label': 'Abrir menu de contexto',
   },
-};
+}
 
-export default meta;
+export default meta
 
-const Template: Story<IconButtonProps> = (args) => <IconButton {...args} />;
+const Template: Story<IconButtonProps> = args => <IconButton {...args} />
 
-export const Melrose = Template.bind({});
+export const Melrose = Template.bind({})
 
 Melrose.args = {
-  color: "melrose",
-};
+  color: 'melrose',
+}
 
-export const FreshAir = Template.bind({});
+export const FreshAir = Template.bind({})
 
 FreshAir.args = {
-  color: "freshAir",
-};
+  color: 'freshAir',
+}
 
-export const GoldenrodYellow = Template.bind({});
+export const GoldenrodYellow = Template.bind({})
 
 GoldenrodYellow.args = {
-  color: "goldenrodYellow",
-};
+  color: 'goldenrodYellow',
+}
 
-export const AeroGreen = Template.bind({});
+export const AeroGreen = Template.bind({})
 
 AeroGreen.args = {
-  color: "aeroGreen",
-};
+  color: 'aeroGreen',
+}
 
-export const SpaceDark = Template.bind({});
+export const SpaceDark = Template.bind({})
 
 SpaceDark.args = {
-  color: "spaceDark",
-};
+  color: 'spaceDark',
+}
 
-export const WithTooltip = Template.bind({});
+export const WithTooltip = Template.bind({})
 
 WithTooltip.args = {
-  tooltip: "Abrir menu de configurações",
-};
+  tooltip: 'Abrir menu de configurações',
+}

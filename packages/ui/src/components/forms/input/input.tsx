@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 
-import { Text } from "../../text";
-import * as S from "../shared/style";
-import { InputProps } from "./input.types";
+import { Text } from '../../text'
+import * as S from '../shared/style'
+import { InputProps } from './input.types'
 
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ label, icon, name, helperText, error, ...props }, ref) => (
@@ -29,8 +29,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           id={`${name}-error`}
           role="alert"
           css={{
-            marginTop: "$2",
-            color: "$errorRed400",
+            marginTop: '$2',
+            color: '$errorRed400',
           }}
         >
           {error}
@@ -43,8 +43,8 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           id={`${name}-helper`}
           tabIndex={-1}
           css={{
-            marginTop: "$2",
-            color: "$spaceDark400",
+            marginTop: '$2',
+            color: '$spaceDark400',
           }}
         >
           {helperText}
@@ -52,4 +52,4 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       )}
     </S.Wrapper>
   )
-);
+)

@@ -1,27 +1,27 @@
-import { styled } from "@/styles";
+import { styled } from '@/styles'
 
-const Text = styled("p", {
-  fontWeight: "$regular",
-  lineHeight: "$normal",
-  fontFamily: "$sans",
+const Text = styled('p', {
+  fontWeight: '$regular',
+  lineHeight: '$normal',
+  fontFamily: '$sans',
 
   variants: {
     size: {
       base: {
-        fontSize: "$base",
-        letterSpacing: "$regular",
+        fontSize: '$base',
+        letterSpacing: '$regular',
       },
       sm: {
-        fontSize: "$sm",
-        letterSpacing: "$wide",
-        fontWeight: "$semibold",
+        fontSize: '$sm',
+        letterSpacing: '$wide',
+        fontWeight: '$semibold',
       },
     },
   },
 
   defaultVariants: {
-    size: "base",
+    size: 'base',
   },
-});
+})
 
-export { Text };
+export { Text }

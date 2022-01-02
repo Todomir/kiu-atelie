@@ -1,18 +1,18 @@
-import { styled } from "@/styles";
+import { styled } from '@/styles'
 
-export const Stack = styled("div", {
-  display: "flex",
+export const Stack = styled('div', {
+  display: 'flex',
   variants: {
     direction: {
       horizontal: {
-        flexDirection: "row",
+        flexDirection: 'row',
       },
       vertical: {
-        flexDirection: "column",
+        flexDirection: 'column',
       },
     },
   },
   defaultVariants: {
-    direction: "horizontal",
+    direction: 'horizontal',
   },
-});
+})

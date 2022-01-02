@@ -1,50 +1,50 @@
-import { Meta, Story } from "@storybook/react";
-import React from "react";
+import { Meta, Story } from '@storybook/react'
+import React from 'react'
 
-import { Heading } from "@/components";
+import { Heading } from '@/components'
 
 const meta: Meta<React.ComponentProps<typeof Heading>> = {
-  title: "Atoms/Heading",
+  title: 'Atoms/Heading',
   component: Heading,
-};
+}
 
-export default meta;
+export default meta
 
-const Template: Story = (args) => <Heading {...args} />;
+const Template: Story = args => <Heading {...args} />
 
-const text = "The quick brown fox jumped over the lazy dog.";
+const text = 'The quick brown fox jumped over the lazy dog.'
 
-export const TripleExtraLarge = Template.bind({});
+export const TripleExtraLarge = Template.bind({})
 
 TripleExtraLarge.args = {
-  size: "3xl",
+  size: '3xl',
   children: text,
-};
+}
 
-export const DoubleExtraLarge = Template.bind({});
+export const DoubleExtraLarge = Template.bind({})
 
 DoubleExtraLarge.args = {
-  size: "2xl",
+  size: '2xl',
   children: text,
-};
+}
 
-export const ExtraLarge = Template.bind({});
+export const ExtraLarge = Template.bind({})
 
 ExtraLarge.args = {
-  size: "xl",
+  size: 'xl',
   children: text,
-};
+}
 
-export const Large = Template.bind({});
+export const Large = Template.bind({})
 
 Large.args = {
-  size: "lg",
+  size: 'lg',
   children: text,
-};
+}
 
-export const Medium = Template.bind({});
+export const Medium = Template.bind({})
 
 Medium.args = {
-  size: "md",
+  size: 'md',
   children: text,
-};
+}

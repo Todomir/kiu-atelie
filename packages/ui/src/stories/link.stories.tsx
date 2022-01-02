@@ -1,23 +1,23 @@
-import { Meta, Story } from "@storybook/react";
-import React from "react";
+import { Meta, Story } from '@storybook/react'
+import React from 'react'
 
-import { Link, LinkProps } from "@/components/link";
+import { Link, LinkProps } from '@/components/link'
 
 const meta: Meta = {
-  title: "Atoms/Link",
+  title: 'Atoms/Link',
   component: Link,
   args: {
-    children: "Link",
-    href: "https://www.example.com",
+    children: 'Link',
+    href: 'https://www.example.com',
   },
-};
+}
 
-export default meta;
+export default meta
 
-const Template: Story<LinkProps> = (args) => <Link {...args} />;
+const Template: Story<LinkProps> = args => <Link {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 
 Default.args = {
   underline: true,
-};
+}

@@ -1,7 +1,7 @@
-import { globalStyles } from "./styles";
+import { globalStyles } from './styles'
 
-globalStyles();
+globalStyles()
 
-export * from "./components";
-export * from "./hooks";
-export { styled, css, getCssText, theme, globalStyles } from "./styles";
+export * from './components'
+export * from './hooks'
+export { styled, css, getCssText, theme, globalStyles } from './styles'

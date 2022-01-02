@@ -1,12 +1,12 @@
-import * as RTooltip from "@radix-ui/react-tooltip";
-import React from "react";
+import * as RTooltip from '@radix-ui/react-tooltip'
+import React from 'react'
 
-import * as S from "./tooltip.styles";
+import * as S from './tooltip.styles'
 
 type Props = {
-  tooltip: React.ReactNode;
+  tooltip: React.ReactNode
 } & React.ComponentProps<typeof RTooltip.Root> &
-  React.ComponentProps<typeof RTooltip.Content>;
+  React.ComponentProps<typeof RTooltip.Content>
 
 export const Tooltip = ({
   children,
@@ -29,4 +29,4 @@ export const Tooltip = ({
       {tooltip}
     </S.Content>
   </RTooltip.Root>
-);
+)

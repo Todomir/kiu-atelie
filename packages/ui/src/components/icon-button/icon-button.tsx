@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react'
 
-import * as S from "@/components/button/button.styles";
+import * as S from '@/components/button/button.styles'
 
-import { Tooltip } from "../tooltip";
-import { IconButtonProps, IconButtonWrapperProps } from "./icon-button.types";
+import { Tooltip } from '../tooltip'
+import { IconButtonProps, IconButtonWrapperProps } from './icon-button.types'
 
 const Wrapper = ({
   tooltip,
   children,
 }: WithChildren<IconButtonWrapperProps>) => {
   // eslint-disable-next-line react/jsx-no-useless-fragment
-  if (!tooltip) return <>{children}</>;
-  return <Tooltip tooltip={tooltip}>{children}</Tooltip>;
-};
+  if (!tooltip) return <>{children}</>
+  return <Tooltip tooltip={tooltip}>{children}</Tooltip>
+}
 
 export const IconButton = ({
   icon,
@@ -25,6 +25,6 @@ export const IconButton = ({
       {icon}
     </S.Button>
   </Wrapper>
-);
+)
 
-IconButton.toString = () => ".icon-button";
+IconButton.toString = () => '.icon-button'

@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
-import * as S from "./button.styles";
-import { ButtonProps } from "./button.types";
+import * as S from './button.styles'
+import { ButtonProps } from './button.types'
 
 export const Button = ({
   leftIcon,
@@ -15,4 +15,4 @@ export const Button = ({
     {children}
     {rightIcon}
   </S.Button>
-);
+)

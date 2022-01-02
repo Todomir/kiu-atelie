@@ -1,2 +1,2 @@
-export { Link } from "./link";
-export * from "./link.types";
+export { Link } from './link'
+export * from './link.types'
