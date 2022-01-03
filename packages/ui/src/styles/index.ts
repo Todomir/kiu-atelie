@@ -1,7 +1,7 @@
 import type * as Stitches from '@stitches/react'
 import { createStitches } from '@stitches/react'
 
-const tokens = {
+export const tokens = {
   colors: {
     melrose300: '#e1ccff',
     melrose400: '#cfb1ff',

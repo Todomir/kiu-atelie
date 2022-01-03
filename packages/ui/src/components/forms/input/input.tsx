@@ -4,6 +4,15 @@ import { Text } from '../../text'
 import * as S from '../shared/style'
 import { InputProps } from './input.types'
 
+const generateDescribedBy = (
+  helperText: string | undefined,
+  error: string | undefined,
+  name: string
+) => {
+  if (!helperText && !error) return undefined
+  return error ? `${name}-error` : `${name}-helper`
+}
+
 export const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ label, icon, name, helperText, error, ...props }, ref) => (
     <S.Wrapper
@@ -15,7 +24,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {icon}
         <S.Input
           aria-invalid={error ? true : undefined}
-          aria-describedby={error ? `${name}-error` : `${name}-helper`}
+          aria-describedby={generateDescribedBy(helperText, error, name)}
           ref={ref}
           name={name}
           id={name}
@@ -44,7 +53,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           tabIndex={-1}
           css={{
             marginTop: '$2',
-            color: '$spaceDark400',
+            color: '$spaceDark600',
           }}
         >
           {helperText}

@@ -36,7 +36,12 @@ export const Password = React.forwardRef<HTMLInputElement, PasswordProps>(
             onClick={toggle}
             color="ghost"
             type="button"
-            icon={<Icon name={show ? 'eye-slashed' : 'eye'} />}
+            icon={
+              <Icon
+                label="Toggle password"
+                name={show ? 'eye-slashed' : 'eye'}
+              />
+            }
           />
         </S.InputWrapper>
         {error && (
@@ -62,7 +67,7 @@ export const Password = React.forwardRef<HTMLInputElement, PasswordProps>(
             tabIndex={-1}
             css={{
               marginTop: '$2',
-              color: '$spaceDark400',
+              color: '$spaceDark600',
             }}
           >
             {helperText}

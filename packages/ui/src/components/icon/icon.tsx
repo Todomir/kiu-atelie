@@ -7,11 +7,12 @@ import icons from './names'
 
 const Svg = styled('svg')
 
-export const Icon = ({ name, size = 20 }: IconProps) => {
+export const Icon = ({ name, label, size = 20 }: IconProps) => {
   const Path = icons[name]
   return (
     <Svg
       role="img"
+      aria-label={label}
       className="icon"
       data-icon={name}
       css={{ width: `${size}px`, height: `${size}px` }}
