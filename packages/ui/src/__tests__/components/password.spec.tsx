@@ -37,7 +37,7 @@ describe('<Password />', () => {
       <Password
         label="Password"
         name="password"
-        icon={<Icon name="trashcan" />}
+        icon={<Icon label="Trashcan label" name="trashcan" />}
       />
     )
 

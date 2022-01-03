@@ -20,7 +20,9 @@ describe('<Button />', () => {
   })
   test('should render with icon', () => {
     const { rerender } = render(
-      <Button rightIcon={<Icon name="trashcan" />}>Button</Button>
+      <Button rightIcon={<Icon label="Trashcan label" name="trashcan" />}>
+        Button
+      </Button>
     )
 
     const rightIcon = screen.getByRole('img')
@@ -31,7 +33,11 @@ describe('<Button />', () => {
     expect(button).toHaveTextContent(/button/i)
     expect(button).toContainElement(rightIcon)
 
-    rerender(<Button leftIcon={<Icon name="trashcan" />}>Button</Button>)
+    rerender(
+      <Button leftIcon={<Icon label="Trashcan label" name="trashcan" />}>
+        Button
+      </Button>
+    )
 
     const leftIcon = screen.getByRole('img')
 

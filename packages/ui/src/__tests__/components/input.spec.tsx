@@ -33,7 +33,13 @@ describe('<Input />', () => {
   })
 
   test('should render with icon', () => {
-    render(<Input label="Input" name="input" icon={<Icon name="trashcan" />} />)
+    render(
+      <Input
+        label="Input"
+        name="input"
+        icon={<Icon label="Trashcan label" name="trashcan" />}
+      />
+    )
 
     const icon = screen.getByRole('img')
     const input = screen.getByLabelText(/input/i)
