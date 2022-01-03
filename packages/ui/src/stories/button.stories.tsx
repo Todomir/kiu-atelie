@@ -3,10 +3,22 @@ import React from 'react'
 
 import { Button, Icon } from '@/components'
 import type { ButtonProps } from '@/components/button'
+import { tokens } from '@/styles'
+
+// trim numbers from the end of the string
+const trimNumbers = (str: string) => str.replace(/\d+$/, '')
 
 const meta: Meta = {
   title: 'Atoms/Button',
   component: Button,
+  argTypes: {
+    color: {
+      options: Object.keys(tokens.colors).map(key => trimNumbers(key)),
+      control: {
+        type: 'select',
+      },
+    },
+  },
 }
 
 export default meta
@@ -52,12 +64,12 @@ export const WithRightIcon = Template.bind({})
 
 WithRightIcon.args = {
   children: 'Button With Icon',
-  rightIcon: <Icon name="chevron-right" />,
+  rightIcon: <Icon label="Icon of button" name="chevron-right" />,
 }
 
 export const WithLeftIcon = Template.bind({})
 
 WithLeftIcon.args = {
   children: 'Button With Icon',
-  leftIcon: <Icon name="chevron-left" />,
+  leftIcon: <Icon label="Icon of button" name="chevron-left" />,
 }

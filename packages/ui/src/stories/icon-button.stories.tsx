@@ -8,7 +8,7 @@ const meta: Meta = {
   title: 'Atoms/IconButton',
   component: IconButton,
   args: {
-    icon: <Icon name="menu-horizontal" />,
+    icon: <Icon label="Menu de contexto" name="menu-horizontal" />,
     'aria-label': 'Abrir menu de contexto',
   },
 }

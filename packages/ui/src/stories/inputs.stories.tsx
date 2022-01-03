@@ -18,6 +18,7 @@ export const Default = Template.bind({})
 Default.args = {
   label: 'Input',
   placeholder: 'Input',
+  name: 'input',
 }
 
 export const DefaultWithIcon = Template.bind({})
@@ -25,7 +26,7 @@ export const DefaultWithIcon = Template.bind({})
 DefaultWithIcon.args = {
   label: 'Input with icon',
   placeholder: 'Input with icon',
-  icon: <Icon name="lock" />,
+  icon: <Icon label="Lock icon" name="lock" />,
 }
 
 export const DefaultWithHelperText = Template.bind({})
@@ -34,6 +35,7 @@ DefaultWithHelperText.args = {
   label: 'Input with helper text',
   placeholder: 'Input with helper text',
   helperText: 'Lorem ipsum dolor sit amet',
+  name: 'input',
 }
 
 export const DefaultWithError = Template.bind({})
@@ -42,4 +44,5 @@ DefaultWithError.args = {
   label: 'Input with error',
   placeholder: 'Input with error',
   error: 'Lorem ipsum dolor sit amet',
+  name: 'input',
 }
