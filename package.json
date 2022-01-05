@@ -17,6 +17,7 @@
     "turbo": "latest"
   },
   "turbo": {
+    "npmClient": "pnpm",
     "pipeline": {
       "build": {
         "dependsOn": [
