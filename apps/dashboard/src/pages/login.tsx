@@ -20,16 +20,22 @@ const Login: NextPage = () => (
       </S.Header>
       <S.Form>
         <Input
-          icon={<Icon name="user" />}
+          name="email"
+          icon={<Icon label="Usuário" name="user" />}
           label="Email"
           placeholder="email@email.com"
         />
         <Password
+          name="password"
           label="Senha"
           placeholder="Sua senha"
           helperText="É segredo. Não contaremos para ninguém."
         />
-        <Button type="submit" full rightIcon={<Icon name="chevron-right" />}>
+        <Button
+          type="submit"
+          full
+          rightIcon={<Icon label="Fazer login" name="chevron-right" />}
+        >
           Fazer login
         </Button>
       </S.Form>

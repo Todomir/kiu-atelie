@@ -43,7 +43,7 @@ const CreateProducts: NextPage = () => {
     <S.Container>
       <NextLink href="https://example.com" passHref>
         <Link css={{ color: '$spaceDark1000' }} href="##">
-          <Icon size={24} name="chevron-left" />
+          <Icon label="Retornar" size={24} name="chevron-left" />
           Voltar à página anterior
         </Link>
       </NextLink>
@@ -124,7 +124,10 @@ const CreateProducts: NextPage = () => {
           helperText="Qual porcentagem de lucro deseja ter nesse produto?"
           error={errors?.profit?.message}
         />
-        <Button rightIcon={<Icon name="chevron-right" />} type="submit">
+        <Button
+          rightIcon={<Icon label="Seta para a direita" name="chevron-right" />}
+          type="submit"
+        >
           Cadastrar produtos
         </Button>
       </Form>
