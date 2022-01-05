@@ -72,28 +72,4 @@ describe('<Input />', () => {
     expect(wrapper).toHaveAttribute('data-invalid', 'true')
     expect(input).toHaveAttribute('aria-invalid', 'true')
   })
-
-  test('should render with error and helper text', () => {
-    render(
-      <Input
-        label="Input"
-        name="input"
-        error="Lorem ipsum"
-        helperText="Hello"
-      />
-    )
-
-    const error = screen.getByRole('alert')
-    const helperText = screen.getByTestId('input-helper')
-    const input = screen.getByLabelText(/input/i)
-    const wrapper = screen.getByTestId('input-wrapper')
-
-    expect(error).toBeInTheDocument()
-    expect(error).toHaveTextContent(/lorem ipsum/i)
-    expect(helperText).toBeInTheDocument()
-    expect(helperText).toHaveTextContent(/hello/i)
-    expect(input).toBeInTheDocument()
-    expect(wrapper).toHaveAttribute('data-invalid', 'true')
-    expect(input).toHaveAttribute('aria-invalid', 'true')
-  })
 })

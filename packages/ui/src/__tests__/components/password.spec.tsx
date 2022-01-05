@@ -76,30 +76,6 @@ describe('<Password />', () => {
     expect(password).toHaveAttribute('aria-invalid', 'true')
   })
 
-  test('should render with error and helper text', () => {
-    render(
-      <Password
-        label="Password"
-        name="password"
-        error="Lorem ipsum"
-        helperText="Hello"
-      />
-    )
-
-    const error = screen.getByRole('alert')
-    const helperText = screen.getByTestId('password-helper')
-    const password = screen.getByLabelText(/password/i)
-    const wrapper = screen.getByTestId('password-wrapper')
-
-    expect(error).toBeInTheDocument()
-    expect(error).toHaveTextContent(/lorem ipsum/i)
-    expect(helperText).toBeInTheDocument()
-    expect(helperText).toHaveTextContent(/hello/i)
-    expect(password).toBeInTheDocument()
-    expect(wrapper).toHaveAttribute('data-invalid', 'true')
-    expect(password).toHaveAttribute('aria-invalid', 'true')
-  })
-
   test('should be able to toggle password visibility', () => {
     render(<Password label="Password" name="password" />)
     const password = screen.getByLabelText(/password/i)
