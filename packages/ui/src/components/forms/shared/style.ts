@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+/* eslint-disable sonarjs/no-duplicate-string */
 import { styled } from '@/styles'
 
 import { Icon } from '../../icon'
@@ -19,13 +21,15 @@ export const InputWrapper = styled('div', {
   justifyContent: 'center',
   gap: '$10',
 
-  background: '$spaceDark50',
+  background: '$$inputBgColor',
   padding: '$16',
 
   borderRadius: '$lg',
+  willChange: 'box-shadow outline',
+  transition: 'box-shadow 0.2s ease',
 
   [`& ${Icon}`]: {
-    color: 'inherit',
+    color: '$$placeholderColor',
     flexShrink: 0,
   },
 
@@ -34,10 +38,14 @@ export const InputWrapper = styled('div', {
     top: '50%',
     transform: 'translate(-$space$16, -50%)',
     right: 0,
+    color: '$$placeholderColor',
   },
 
   '&:focus-within': {
-    outline: '2px solid black',
+    outline: '1px solid $$outline',
+    boxShadow: '$$outlineOutside',
+    backgroundColor: '$$inputBgColorFocus',
+    color: '$errorRed400',
   },
 })
 
@@ -56,19 +64,16 @@ export const Input = styled('input', {
 
   '&:focus': {
     outline: 'none',
+    '&::placeholder': {
+      color: '$spaceDark400',
+    },
   },
 
   '&::placeholder': {
     fontFamily: '$sans',
     fontSize: '$base',
     fontWeight: '$regular',
-    color: '$spaceDark400',
-  },
-
-  '&[aria-invalid]': {
-    '&::placeholder': {
-      color: '$colors$errorRed400',
-    },
+    color: '$$placeholderColor',
   },
 })
 
@@ -77,12 +82,17 @@ export const Wrapper = styled('div', {
   flexDirection: 'column',
   position: 'relative',
 
+  $$outline: '$colors$melrose500',
+  $$outlineOutside: '0px 0px 0px 4px rgba(159, 135, 255, 0.2)',
+  $$inputBgColor: '$spaceDark50',
+  $$inputBgColorFocus: '$spaceDark900',
+  $$placeholderColor: '$colors$spaceDark400',
   '&[data-invalid]': {
-    [`& ${Label}`]: {
-      color: '$errorRed400',
-    },
     [`& ${InputWrapper}`]: {
-      outline: '2px solid $errorRed400',
+      $$outline: '$colors$errorRed400',
+      $$outlineOutside: '0px 0px 0px 4px rgba(227, 0, 0, 0.2)',
+      $$inputBgColor: 'rgba(227, 0, 0, 0.06)',
+      $$placeholderColor: '$colors$errorRed400',
     },
   },
 })

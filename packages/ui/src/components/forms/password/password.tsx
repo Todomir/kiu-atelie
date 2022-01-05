@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { Stack } from '@/components'
 import { useToggle } from '@/hooks'
 
 import { Icon } from '../../icon'
@@ -10,6 +11,8 @@ import { PasswordProps } from './password.types'
 
 export const Password = React.forwardRef<HTMLInputElement, PasswordProps>(
   ({ label, icon, name, helperText, error, ...props }, ref) => {
+    const containsHelperOrError = !!helperText || !!error
+
     const [show, toggle] = useToggle()
     return (
       <S.Wrapper
@@ -44,34 +47,24 @@ export const Password = React.forwardRef<HTMLInputElement, PasswordProps>(
             }
           />
         </S.InputWrapper>
-        {error && (
-          <Text
-            as="small"
-            size="sm"
-            id={`${name}-error`}
-            role="alert"
+        {containsHelperOrError && (
+          <Stack
+            gap="$4"
             css={{
-              marginTop: '$2',
-              color: '$errorRed400',
+              color: error ? '$errorRed400' : '$spaceDark600',
+              marginTop: '$8',
             }}
           >
-            {error}
-          </Text>
-        )}
-
-        {helperText && (
-          <Text
-            size="sm"
-            id={`${name}-helper`}
-            data-testid={`${name}-helper`}
-            tabIndex={-1}
-            css={{
-              marginTop: '$2',
-              color: '$spaceDark600',
-            }}
-          >
-            {helperText}
-          </Text>
+            {error && <Icon label="Error indicator" name="info" size={16} />}
+            <Text
+              as="small"
+              size="sm"
+              id={error ? `${name}-error` : `${name}-helper`}
+              role={error ? 'alert' : undefined}
+            >
+              {error || helperText}
+            </Text>
+          </Stack>
         )}
       </S.Wrapper>
     )
