@@ -27,6 +27,7 @@ const Login: NextPage = () => (
         />
         <Password
           name="password"
+          icon={<Icon label="Senha" name="lock" />}
           label="Senha"
           placeholder="Sua senha"
           helperText="É segredo. Não contaremos para ninguém."
