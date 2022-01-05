@@ -7,14 +7,14 @@ import { Icon, Password } from '@/components'
 describe('<Password />', () => {
   test('should render', () => {
     render(<Password label="Password" name="password" />)
-    const password = screen.getByLabelText(/password/i)
+    const password = screen.getByLabelText('Password')
 
     expect(password).toBeInTheDocument()
   })
 
   test('should be interactive', () => {
     render(<Password label="Password" name="password" />)
-    const password = screen.getByLabelText(/password/i)
+    const password = screen.getByLabelText('Password')
 
     user.type(password, 'Hello')
     expect(password).toHaveValue('Hello')
@@ -26,7 +26,7 @@ describe('<Password />', () => {
   test('should execute onChange', () => {
     const onChange = jest.fn()
     render(<Password label="Password" name="password" onChange={onChange} />)
-    const password = screen.getByLabelText(/password/i)
+    const password = screen.getByLabelText('Password')
 
     user.type(password, 'Hello')
     expect(onChange).toHaveBeenCalled()
@@ -42,7 +42,7 @@ describe('<Password />', () => {
     )
 
     const [icon] = screen.queryAllByRole('img')
-    const password = screen.getByLabelText(/password/i)
+    const password = screen.getByLabelText('Password')
 
     expect(icon).toBeInTheDocument()
     expect(icon).toHaveAttribute('data-icon', 'trashcan')
@@ -55,7 +55,7 @@ describe('<Password />', () => {
     )
 
     const helperText = screen.getByTestId('password-helper')
-    const password = screen.getByLabelText(/password/i)
+    const password = screen.getByLabelText('Password')
 
     expect(helperText).toBeInTheDocument()
     expect(helperText).toHaveTextContent(/lorem ipsum/i)
@@ -66,7 +66,7 @@ describe('<Password />', () => {
     render(<Password label="Password" name="password" error="Lorem ipsum" />)
 
     const error = screen.getByRole('alert')
-    const password = screen.getByLabelText(/password/i)
+    const password = screen.getByLabelText('Password')
     const wrapper = screen.getByTestId('password-wrapper')
 
     expect(error).toBeInTheDocument()
@@ -78,7 +78,7 @@ describe('<Password />', () => {
 
   test('should be able to toggle password visibility', () => {
     render(<Password label="Password" name="password" />)
-    const password = screen.getByLabelText(/password/i)
+    const password = screen.getByLabelText('Password')
     const toggle = screen.getByRole('switch')
 
     expect(password).toHaveAttribute('type', 'password')

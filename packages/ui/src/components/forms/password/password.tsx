@@ -59,6 +59,7 @@ export const Password = React.forwardRef<HTMLInputElement, PasswordProps>(
             <Text
               as="small"
               size="sm"
+              data-testid={error ? `${name}-error` : `${name}-helper`}
               id={error ? `${name}-error` : `${name}-helper`}
               role={error ? 'alert' : undefined}
             >
