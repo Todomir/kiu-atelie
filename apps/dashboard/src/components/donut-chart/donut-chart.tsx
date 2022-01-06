@@ -2,7 +2,7 @@
 import { css } from '@kiuatelie/ui'
 import { Group } from '@visx/group'
 import { Pie } from '@visx/shape'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 
 import * as S from './donut-chart.styles'
@@ -28,7 +28,7 @@ const data: Data[] = [
   {
     description: 'Bloco Anotações 50fls Gato',
     id: '0193',
-    sales: 2342,
+    sales: 5342,
     buyPrice: 4.07,
     salePrice: 14.9,
   },
@@ -72,6 +72,21 @@ const createPieClass = (index: number) =>
     },
   })
 
+const createTextContent = (d: Data) => {
+  const formatter = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  })
+
+  if (d.total) {
+    return formatter.format(d.total * d.sales)
+  }
+  if (d.salePrice) {
+    return formatter.format(d.salePrice * d.sales)
+  }
+
+  return null
+}
 export const DonutChart = () => {
   const width = 245
 
@@ -79,7 +94,7 @@ export const DonutChart = () => {
 
   return (
     <div>
-      <svg width={width + 100} height={width + 100}>
+      <svg width={width} height={width}>
         <Group top={width / 2} left={width / 2}>
           <Pie<Data>
             data={data}
@@ -101,6 +116,7 @@ export const DonutChart = () => {
                   onBlur={() => setActive(null)}
                 >
                   <motion.path
+                    aria-describedby={`price-${arc.data.id}`}
                     initial={false}
                     animate={{ d: pie.path(arc) as string }}
                     className={createPieClass(index)()}
@@ -111,17 +127,42 @@ export const DonutChart = () => {
               ))
             }
           </Pie>
+          <AnimatePresence>
+            {active && (
+              <motion.text
+                role="alert"
+                aria-live="assertive"
+                id={`price-${active.id}`}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                textAnchor="middle"
+                className={css({
+                  fill: '$colors$spaceDark900',
+                  fontSize: '$md',
+                  fontWeight: '$bold',
+                })()}
+              >
+                {createTextContent(active) || ''}
+              </motion.text>
+            )}
+          </AnimatePresence>
         </Group>
       </svg>
       <aside>
         {data.map((d, index) => (
-          <S.LegendWrapper key={`items-${d.id}`}>
+          <S.LegendWrapper
+            onClick={() => setActive(d)}
+            onFocus={() => setActive(d)}
+            onBlur={() => setActive(null)}
+            key={`items-${d.id}`}
+          >
             <S.ProductIndicator
               className={css({
                 backgroundColor: colors[index],
               })()}
             />
-            <S.Legend>
+            <S.Legend tabIndex={0}>
               {d.description} {d.id !== '0000' && `| ${d.id}`}
             </S.Legend>
           </S.LegendWrapper>
