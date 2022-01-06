@@ -93,7 +93,7 @@ export const DonutChart = () => {
   const [active, setActive] = useState<Data | null>(null)
 
   return (
-    <div>
+    <S.PieWrapper>
       <svg width={width} height={width}>
         <Group top={width / 2} left={width / 2}>
           <Pie<Data>
@@ -193,6 +193,6 @@ export const DonutChart = () => {
           ))}
         </LayoutGroup>
       </aside>
-    </div>
+    </S.PieWrapper>
   )
 }

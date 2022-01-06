@@ -2,6 +2,10 @@
 import { styled, Text } from '@kiuatelie/ui'
 import { motion } from 'framer-motion'
 
+export const PieWrapper = styled('div', {
+  display: 'flex',
+})
+
 export const ProductIndicator = styled('span', {
   width: '16px',
   height: '16px',
