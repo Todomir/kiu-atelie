@@ -114,28 +114,29 @@ export const tokens = {
   },
 }
 
-const { styled, css, theme, getCssText, globalCss, config } = createStitches({
-  prefix: 'kiu',
-  theme: { ...tokens },
-  utils: {
-    px: (value: Stitches.ScaleValue<'space'>) => ({
-      paddingLeft: value,
-      paddingRight: value,
-    }),
-    py: (value: Stitches.ScaleValue<'space'>) => ({
-      paddingTop: value,
-      paddingBottom: value,
-    }),
-    mx: (value: Stitches.ScaleValue<'space'>) => ({
-      marginLeft: value,
-      marginRight: value,
-    }),
-    my: (value: Stitches.ScaleValue<'space'>) => ({
-      marginTop: value,
-      marginBottom: value,
-    }),
-  },
-})
+const { styled, css, theme, getCssText, globalCss, config, keyframes } =
+  createStitches({
+    prefix: 'kiu',
+    theme: { ...tokens },
+    utils: {
+      px: (value: Stitches.ScaleValue<'space'>) => ({
+        paddingLeft: value,
+        paddingRight: value,
+      }),
+      py: (value: Stitches.ScaleValue<'space'>) => ({
+        paddingTop: value,
+        paddingBottom: value,
+      }),
+      mx: (value: Stitches.ScaleValue<'space'>) => ({
+        marginLeft: value,
+        marginRight: value,
+      }),
+      my: (value: Stitches.ScaleValue<'space'>) => ({
+        marginTop: value,
+        marginBottom: value,
+      }),
+    },
+  })
 
 const globalStyles = globalCss({
   '*, *::before, *::after': {
@@ -154,4 +155,4 @@ const globalStyles = globalCss({
   },
 })
 
-export { styled, css, getCssText, theme, globalStyles, config }
+export { styled, css, getCssText, theme, globalStyles, config, keyframes }
