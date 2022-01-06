@@ -1,8 +1,8 @@
 /* eslint-disable security/detect-object-injection */
-import { css } from '@kiuatelie/ui'
+import { css, Text } from '@kiuatelie/ui'
 import { Group } from '@visx/group'
 import { Pie } from '@visx/shape'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion'
 import { useState } from 'react'
 
 import * as S from './donut-chart.styles'
@@ -72,17 +72,17 @@ const createPieClass = (index: number) =>
     },
   })
 
-const createTextContent = (d: Data) => {
-  const formatter = new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL',
-  })
+const brlFormatter = new Intl.NumberFormat('pt-BR', {
+  style: 'currency',
+  currency: 'BRL',
+})
 
+const createTextContent = (d: Data) => {
   if (d.total) {
-    return formatter.format(d.total * d.sales)
+    return brlFormatter.format(d.total * d.sales)
   }
   if (d.salePrice) {
-    return formatter.format(d.salePrice * d.sales)
+    return brlFormatter.format(d.salePrice * d.sales)
   }
 
   return null
@@ -121,7 +121,6 @@ export const DonutChart = () => {
                     animate={{ d: pie.path(arc) as string }}
                     className={createPieClass(index)()}
                     d={pie.path(arc) as string}
-                    tabIndex={0}
                   />
                 </g>
               ))
@@ -150,23 +149,49 @@ export const DonutChart = () => {
         </Group>
       </svg>
       <aside>
-        {data.map((d, index) => (
-          <S.LegendWrapper
-            onClick={() => setActive(d)}
-            onFocus={() => setActive(d)}
-            onBlur={() => setActive(null)}
-            key={`items-${d.id}`}
-          >
-            <S.ProductIndicator
-              className={css({
-                backgroundColor: colors[index],
-              })()}
-            />
-            <S.Legend tabIndex={0}>
-              {d.description} {d.id !== '0000' && `| ${d.id}`}
-            </S.Legend>
-          </S.LegendWrapper>
-        ))}
+        <LayoutGroup>
+          {data.map((d, index) => (
+            <S.LegendWrapper
+              onClick={() => setActive(d)}
+              onFocus={() => setActive(d)}
+              onBlur={() => setActive(null)}
+              key={`items-${d.id}`}
+            >
+              <S.Product>
+                <S.Legend tabIndex={0}>
+                  <S.ProductIndicator
+                    className={css({
+                      backgroundColor: colors[index],
+                    })()}
+                  />
+                  {d.description} {d.id !== '0000' && `| ${d.id}`}
+                </S.Legend>
+                <AnimatePresence>
+                  {active && active.id === d.id && (
+                    <S.Details
+                      key={`details-${d.id}`}
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Text css={{ marginTop: '$8' }}>
+                        <strong>Quantidade: </strong>
+                        {d.sales} unidades vendidas
+                      </Text>
+                      {d.salePrice && (
+                        <Text>
+                          <strong>Preço de venda: </strong>
+                          {brlFormatter.format(d.salePrice)}
+                        </Text>
+                      )}
+                    </S.Details>
+                  )}
+                </AnimatePresence>
+              </S.Product>
+            </S.LegendWrapper>
+          ))}
+        </LayoutGroup>
       </aside>
     </div>
   )
