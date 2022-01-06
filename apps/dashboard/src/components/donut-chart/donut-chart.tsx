@@ -175,7 +175,7 @@ export const DonutChart = () => {
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <Text css={{ marginTop: '$8' }}>
+                      <Text aria-live="polite" css={{ marginTop: '$8' }}>
                         <strong>Quantidade: </strong>
                         {d.sales} unidades vendidas
                       </Text>
