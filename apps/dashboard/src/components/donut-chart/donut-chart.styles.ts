@@ -26,6 +26,11 @@ export const Legend = styled('span', {
   gap: '$6',
   fontWeight: '$semibold',
   color: '$spaceDark900',
+  borderRadius: '$md',
+
+  '&:focus': {
+    outline: '2px solid black',
+  },
 })
 
 export const Product = styled('section', {
