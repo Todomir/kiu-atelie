@@ -5,16 +5,10 @@ import { Pie } from '@visx/shape'
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion'
 import { useState } from 'react'
 
-import * as S from './donut-chart.styles'
+import { brlConverter } from '@/utils/functions'
 
-type Data = {
-  description: string
-  id: string
-  sales: number
-  buyPrice?: number
-  salePrice?: number
-  total?: number
-}
+import * as S from './donut-chart.styles'
+import { Data } from './donut-chart.types'
 
 const colors = [
   '$colors$melrose400',
@@ -72,17 +66,12 @@ const createPieClass = (index: number) =>
     },
   })
 
-const brlFormatter = new Intl.NumberFormat('pt-BR', {
-  style: 'currency',
-  currency: 'BRL',
-})
-
 const createTextContent = (d: Data) => {
   if (d.total) {
-    return brlFormatter.format(d.total * d.sales)
+    return brlConverter(d.total * d.sales)
   }
   if (d.salePrice) {
-    return brlFormatter.format(d.salePrice * d.sales)
+    return brlConverter(d.salePrice * d.sales)
   }
 
   return null
@@ -182,7 +171,7 @@ export const DonutChart = () => {
                       {d.salePrice && (
                         <Text>
                           <strong>Preço de venda: </strong>
-                          {brlFormatter.format(d.salePrice)}
+                          {brlConverter(d.salePrice)}
                         </Text>
                       )}
                     </S.Details>
