@@ -19,6 +19,7 @@ importers:
       '@types/react': 17.0.38
       '@types/react-dom': 17.0.11
       '@visx/group': ^2.1.0
+      '@visx/responsive': ^2.4.1
       '@visx/shape': ^2.4.0
       '@visx/text': ^2.3.0
       '@xstate/react': ^1.6.3
@@ -36,6 +37,7 @@ importers:
       '@radix-ui/react-portal': 0.1.3_react-dom@17.0.2+react@17.0.2
       '@supabase/supabase-js': 1.29.1
       '@visx/group': 2.1.0_react@17.0.2
+      '@visx/responsive': 2.4.1_react@17.0.2
       '@visx/shape': 2.4.0_react@17.0.2
       '@visx/text': 2.3.0_react@17.0.2
       '@xstate/react': 1.6.3_710d169ec5a809377055a04e9e7ea5bd
@@ -1571,6 +1573,7 @@ packages:
 
   /@emotion/is-prop-valid/0.8.8:
     resolution: {integrity: sha512-u5WtneEAr5IDG2Wv65yhunPSMLIpuKsbuOktRojfrEiEvRyC85LgPMZI63cr7NUqT8ZIGdSVg8ZKGxIug4lXcA==}
+    requiresBuild: true
     dependencies:
       '@emotion/memoize': 0.7.4
 
@@ -4551,6 +4554,19 @@ packages:
       classnames: 2.3.1
       prop-types: 15.8.1
       react: 17.0.2
+    dev: false
+
+  /@visx/responsive/2.4.1_react@17.0.2:
+    resolution: {integrity: sha512-x5zPUmmsdVX/QaeDj9rLg3mGtNuiomBWUvwBo5oQs2KOtAFiviHx0NpLfY09h+p5gvkmGfTM+8gHEtVtIwLXPg==}
+    peerDependencies:
+      react: ^16.0.0-0 || ^17.0.0-0
+    dependencies:
+      '@types/lodash': 4.14.178
+      '@types/react': 17.0.38
+      lodash: 4.17.21
+      prop-types: 15.8.1
+      react: 17.0.2
+      resize-observer-polyfill: 1.5.1
     dev: false
 
   /@visx/scale/2.2.2:
@@ -11536,6 +11552,10 @@ packages:
   /require-directory/2.1.1:
     resolution: {integrity: sha1-jGStX9MNqxyXbiNE/+f3kqam30I=}
     engines: {node: '>=0.10.0'}
+
+  /resize-observer-polyfill/1.5.1:
+    resolution: {integrity: sha512-LwZrotdHOo12nQuZlHEmtuXdqGoOD0OhaxopaNFxWzInpEgaLWoVuAMbTzixuosCx2nEG58ngzW3vxdWoxIgdg==}
+    dev: false
 
   /resolve-cwd/3.0.0:
     resolution: {integrity: sha512-OrZaX2Mb+rJCpH/6CpSqt9xFVpN++x01XnN2ie9g6P5/3xelLAkXWVADpdz1IHD/KFfEXyE6V0U01OQ3UO2rEg==}
