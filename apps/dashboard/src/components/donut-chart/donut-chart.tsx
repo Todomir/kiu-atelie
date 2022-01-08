@@ -1,6 +1,7 @@
 /* eslint-disable security/detect-object-injection */
 import { css, Text } from '@kiuatelie/ui'
 import { Group } from '@visx/group'
+import { ParentSize } from '@visx/responsive'
 import { Pie } from '@visx/shape'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
@@ -71,66 +72,71 @@ const createTextContent = (d: Data) => {
   return null
 }
 export const DonutChart = () => {
-  const width = 245
-
   const [active, setActive] = useState<Data | null>(null)
 
   return (
     <S.PieWrapper>
-      <svg width={width} height={width}>
-        <Group top={width / 2} left={width / 2}>
-          <Pie<Data>
-            data={data}
-            pieValue={getSales}
-            outerRadius={width / 2}
-            innerRadius={({ data: d }) => {
-              const size = active && active.id === d.id ? 40 : 20
-              const half = width / 2
-              return half - size
-            }}
-          >
-            {pie =>
-              pie.arcs.map((arc, index) => (
-                <g
-                  key={arc.data.id}
-                  onMouseEnter={() => setActive(arc.data)}
-                  onMouseLeave={() => setActive(null)}
-                  onFocus={() => setActive(arc.data)}
-                  onBlur={() => setActive(null)}
+      <S.ChartContainer>
+        <ParentSize>
+          {({ width }) => (
+            <svg width={width} height={width}>
+              <Group top={width / 2} left={width / 2}>
+                <Pie<Data>
+                  data={data}
+                  pieValue={getSales}
+                  outerRadius={width / 2}
+                  innerRadius={({ data: d }) => {
+                    const size = active && active.id === d.id ? 40 : 20
+                    const half = width / 2
+                    return half - size
+                  }}
                 >
-                  <motion.path
-                    aria-describedby={`price-${arc.data.id}`}
-                    initial={false}
-                    animate={{ d: pie.path(arc) as string }}
-                    className={createPieClass(index)()}
-                    d={pie.path(arc) as string}
-                  />
-                </g>
-              ))
-            }
-          </Pie>
-          <AnimatePresence>
-            {active && (
-              <motion.text
-                role="alert"
-                aria-live="assertive"
-                id={`price-${active.id}`}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                textAnchor="middle"
-                className={css({
-                  fill: '$colors$spaceDark900',
-                  fontSize: '$md',
-                  fontWeight: '$bold',
-                })()}
-              >
-                {createTextContent(active) || ''}
-              </motion.text>
-            )}
-          </AnimatePresence>
-        </Group>
-      </svg>
+                  {pie =>
+                    pie.arcs.map((arc, index) => (
+                      <g
+                        key={arc.data.id}
+                        onMouseEnter={() => setActive(arc.data)}
+                        onMouseLeave={() => setActive(null)}
+                        onFocus={() => setActive(arc.data)}
+                        onBlur={() => setActive(null)}
+                      >
+                        <motion.path
+                          aria-describedby={`price-${arc.data.id}`}
+                          initial={false}
+                          animate={{ d: pie.path(arc) as string }}
+                          className={createPieClass(index)()}
+                          d={pie.path(arc) as string}
+                        />
+                      </g>
+                    ))
+                  }
+                </Pie>
+                <AnimatePresence>
+                  {active && (
+                    <motion.text
+                      role="alert"
+                      aria-live="assertive"
+                      id={`price-${active.id}`}
+                      initial={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -20 }}
+                      textAnchor="middle"
+                      className={css({
+                        fill: '$colors$spaceDark900',
+                        fontSize: '$md',
+                        fontWeight: '$bold',
+                      })()}
+                    >
+                      {createTextContent(active) || ''}
+                    </motion.text>
+                  )}
+                </AnimatePresence>
+              </Group>
+            </svg>
+          )}
+        </ParentSize>
+      </S.ChartContainer>
+
       <Legend<Data>
         identifier="id"
         data={data}
