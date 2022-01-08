@@ -2,21 +2,15 @@
 import { css, Text } from '@kiuatelie/ui'
 import { Group } from '@visx/group'
 import { Pie } from '@visx/shape'
-import { AnimatePresence, LayoutGroup, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 
 import { brlConverter } from '@/utils/functions'
 
 import * as S from './donut-chart.styles'
 import { Data } from './donut-chart.types'
-
-const colors = [
-  '$colors$melrose400',
-  '$colors$freshAir400',
-  '$colors$aeroGreen400',
-  '$colors$goldenrodYellow400',
-  '$colors$spaceDark200',
-]
+import { Legend } from './legend'
+import { colors } from './shared/constants'
 
 const data: Data[] = [
   {
@@ -137,51 +131,28 @@ export const DonutChart = () => {
           </AnimatePresence>
         </Group>
       </svg>
-      <aside>
-        <LayoutGroup>
-          {data.map((d, index) => (
-            <S.LegendWrapper
-              onClick={() => setActive(d)}
-              onFocus={() => setActive(d)}
-              onBlur={() => setActive(null)}
-              key={`items-${d.id}`}
-            >
-              <S.Product>
-                <S.Legend tabIndex={0}>
-                  <S.ProductIndicator
-                    className={css({
-                      backgroundColor: colors[index],
-                    })()}
-                  />
-                  {d.description} {d.id !== '0000' && `| ${d.id}`}
-                </S.Legend>
-                <AnimatePresence>
-                  {active && active.id === d.id && (
-                    <S.Details
-                      key={`details-${d.id}`}
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Text aria-live="polite" css={{ marginTop: '$8' }}>
-                        <strong>Quantidade: </strong>
-                        {d.sales} unidades vendidas
-                      </Text>
-                      {d.salePrice && (
-                        <Text>
-                          <strong>Preço de venda: </strong>
-                          {brlConverter(d.salePrice)}
-                        </Text>
-                      )}
-                    </S.Details>
-                  )}
-                </AnimatePresence>
-              </S.Product>
-            </S.LegendWrapper>
-          ))}
-        </LayoutGroup>
-      </aside>
+      <Legend<Data>
+        identifier="id"
+        data={data}
+        active={active}
+        setActive={setActive}
+        legend={d => `${d.description} | ${d.id}`}
+      >
+        {d => (
+          <>
+            <Text aria-live="polite" css={{ marginTop: '$8' }}>
+              <strong>Quantidade: </strong>
+              {d.sales} unidades vendidas
+            </Text>
+            {d.salePrice && (
+              <Text>
+                <strong>Preço de venda: </strong>
+                {brlConverter(d.salePrice)}
+              </Text>
+            )}
+          </>
+        )}
+      </Legend>
     </S.PieWrapper>
   )
 }
