@@ -24,6 +24,8 @@ export const InputWrapper = styled('div', {
   background: '$$inputBgColor',
   padding: '$16',
 
+  $$outline: '$colors$spaceDark200',
+  border: '1px solid $$outline',
   borderRadius: '$lg',
   willChange: 'box-shadow outline',
   transition: 'box-shadow 0.2s ease',
@@ -42,7 +44,8 @@ export const InputWrapper = styled('div', {
   },
 
   '&:focus-within': {
-    outline: '1px solid $$outline',
+    $$outline: '$colors$melrose500',
+    borderColor: '$$outline',
     boxShadow: '$$outlineOutside',
     backgroundColor: '$$inputBgColorFocus',
     color: '$errorRed400',
@@ -84,8 +87,8 @@ export const Wrapper = styled('div', {
 
   $$outline: '$colors$melrose500',
   $$outlineOutside: '0px 0px 0px 4px rgba(159, 135, 255, 0.2)',
-  $$inputBgColor: '$spaceDark50',
-  $$inputBgColorFocus: '$spaceDark900',
+  $$inputBgColor: '$colors$spaceDark50',
+  $$inputBgColorFocus: '$colors$white',
   $$placeholderColor: '$colors$spaceDark400',
   '&[data-invalid]': {
     [`& ${InputWrapper}`]: {
