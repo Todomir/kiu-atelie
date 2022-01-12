@@ -1,6 +1,5 @@
 import { styled } from '@kiuatelie/ui'
 
-export const Container = styled('main', {})
 export const Section = styled('section', {
   maxWidth: '26.625rem',
   padding: '$36',
